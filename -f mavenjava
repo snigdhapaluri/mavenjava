@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     tools {
-        maven 'MAVEN-HOME'
+        maven 'MAVEN_HOME'   // must match name in Manage Jenkins → Tools
     }
 
     stages {
@@ -28,8 +28,9 @@ pipeline {
 
         stage('package') {
             steps {
-                bat 'mvn package -f mavenjava'
+                bat "mvn package -f mavenjava"
             }
         }
     }
 }
+
